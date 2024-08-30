@@ -17,7 +17,7 @@
 |id              |BIGINT        |clé primaire           |
 |name            |VARCHAR       |pseudo unique du client|
 |description     |TEXT          |description du produit |
-|password        |VARCHAR       |MDP du client          |
+|stock_qty       |INT           |quantité du stock      |
 |create_at       |TIMESTAMPS    |Date de créatiion      |
 |update_at       |TIMESTAMPS    |Date de modification   |
 
@@ -30,7 +30,7 @@
 |id              |BIGINT        |clé primaire           |
 |user_id         |BIGINT        |Clé secondaire         |
 |total_amount    |DECIMAL       |Montant total          |
-|statut          |VARCHAR       |statuts (encour ... )   |
+|statut          |VARCHAR       |statuts (encour ... )  |
 |create_at       |TIMESTAMPS    |Date de créatiion      |
 |update_at       |TIMESTAMPS    |Date de modification   |
 
@@ -52,7 +52,7 @@
 ## Relations
 
 *`users`->`orders`: un usser peut faire plusieurs commandes
-*`products`->`orders_items`:une commande peut avoir plusieurs items *`product`->`order_items`: un produit peut etre commander plusieurs fois
+*`orders`->`orders_items`:une commande peut avoir plusieurs items *`product`->`order_items`: un produit peut être commander plusieurs fois
 
 `spring.jpa.hibernate.ddl-auto`:
 Cette propriéte est utilisée pour spécifier la stratégie de génèration de schéma de la BDD lors du démarrage de l'application .

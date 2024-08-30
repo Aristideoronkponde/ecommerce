@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import bj.highfiveuniversity.ecommerce.models.User;
 import bj.highfiveuniversity.ecommerce.repository.UserRepository;
+import java.util.ArrayList;
 
 @SpringBootApplication
 public class EcommerceApplication {
@@ -25,8 +26,16 @@ public CommandLineRunner demo(UserRepository userRepository){
 		.createdAt(LocalDateTime.now())
 		.updatedAt(LocalDateTime.now())
 		.build();
-		// User john= new User(null,"john","john@naza","yofam",LocalDateTime.now(),LocalDateTime.now());
+		User john= new User(
+			null,
+			"john",
+			"john@naza",
+			"yofam",
+			LocalDateTime.now(),
+			LocalDateTime.now(),
+			new ArrayList<>());
 		userRepository.save(johndoe);
+		userRepository.save(john);
 	};
 }
 
