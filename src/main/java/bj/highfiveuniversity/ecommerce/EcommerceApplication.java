@@ -18,16 +18,15 @@ public class EcommerceApplication {
 
 public CommandLineRunner demo(UserRepository userRepository){
 	return (args) ->{
-		//sauvergarder john Joe dans la BDD
-		// User johndoe = User.builder()
-		// .email("johndoe@gamil")
-		// .username("johndoe")
-		// .password("1234")
-		// .createdAt(LocalDateTime.now())
-		// .updatedAt(LocalDateTime.now())
-		// .build();
-		User john= new User(null,"john","john@naza","yofam",LocalDateTime.now(),LocalDateTime.now());
-		userRepository.save(john);
+		User johndoe = User.builder()
+		.email("johndoe@gamil")
+		.username("johndoe")
+		.password("1234")
+		.createdAt(LocalDateTime.now())
+		.updatedAt(LocalDateTime.now())
+		.build();
+		// User john= new User(null,"john","john@naza","yofam",LocalDateTime.now(),LocalDateTime.now());
+		userRepository.save(johndoe);
 	};
 }
 
